@@ -1,0 +1,38 @@
+digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+"-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
+1 [class=active, fontsize=12, label=action_session_start];
+2 [class=active, fontsize=12, label=utter_ask_cuisine];
+3 [class=active, fontsize=12, label=action_search_restaurants];
+4 [class=active, fontsize=12, label=utter_ask_if_needs_email];
+5 [class=active, fontsize=12, label=utter_goodbye];
+6 [class=active, fontsize=12, label=utter_do_not_serve];
+7 [class=active, fontsize=12, label=utter_ask_cuisine];
+8 [class=active, fontsize=12, label=utter_ask_price_range];
+12 [class="intent dashed active", label="  ?  ", shape=rect];
+13 [class="intent active", fillcolor=lightblue, label="Please find restaurants in Pune", shape=rect, style=filled];
+14 [class="intent active", fillcolor=lightblue, label=Chinese, shape=rect, style=filled];
+15 [class="intent active", fillcolor=lightblue, label=no, shape=rect, style=filled];
+16 [class="intent active", fillcolor=lightblue, label="Please find restaurants in california", shape=rect, style=filled];
+17 [class="intent active", fillcolor=lightblue, label=Chandigarh, shape=rect, style=filled];
+18 [class="intent active", fillcolor=lightblue, label="South Indian", shape=rect, style=filled];
+19 [class="intent active", fillcolor=lightblue, label="700-", shape=rect, style=filled];
+0 -> "-1"  [class="", key=NONE, label=""];
+0 -> 1  [class=active, key=NONE, label=""];
+1 -> 13  [class=active, key=0];
+2 -> 14  [class=active, key=0];
+3 -> 4  [class=active, key=NONE, label=""];
+4 -> 15  [class=active, key=0];
+5 -> 12  [class=active, key=NONE, label=""];
+5 -> 16  [class=active, key=0];
+6 -> 17  [class=active, key=0];
+7 -> 18  [class=active, key=0];
+8 -> 19  [class=active, key=0];
+13 -> 2  [class=active, key=0];
+14 -> 3  [class=active, key=0];
+15 -> 5  [class=active, key=0];
+16 -> 6  [class=active, key=0];
+17 -> 7  [class=active, key=0];
+18 -> 8  [class=active, key=0];
+19 -> 3  [class=active, key=0];
+}

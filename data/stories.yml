@@ -1,0 +1,440 @@
+version: "2.0"
+stories:
+- story: complete path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price_range
+  - intent: restaurant_search
+    entities:
+    - price: 0-300
+  - slot_was_set:
+    - price: 0-300
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_if_needs_email
+  - intent: inform
+    entities:
+    - send_email: yes
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: admin@gmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: location specified
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price_range
+  - intent: restaurant_search
+    entities:
+    - price: 700-
+  - slot_was_set:
+    - price: 700-
+  - action: action_search_restaurants
+  - action: utter_ask_if_needs_email
+  - intent: inform
+    entities:
+    - send_email: yes
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: birju@gmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: complete path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_search_restaurants
+  - action: utter_ask_if_needs_email
+  - intent: inform
+    entities:
+    - send_email: yes
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: shaheed@gmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+- story: complete path 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: italy
+  - slot_was_set:
+    - location: italy
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_search_restaurants
+  - action: utter_ask_if_needs_email
+  - intent: inform
+    entities:
+    - send_email: no
+  - action: utter_goodbye
+- story: complete path 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price_range
+  - intent: restaurant_search
+    entities:
+    - price: 300-700
+  - slot_was_set:
+    - price: 300-700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_if_needs_email
+  - intent: inform
+    entities:
+    - send_email: no
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinesse
+    - location: ahmedabad
+  - slot_was_set:
+    - cuisine: chinesse
+  - slot_was_set:
+    - location: ahmedabad
+  - action: utter_ask_price_range
+  - intent: restaurant_search
+    entities:
+    - price: 300-700
+  - slot_was_set:
+    - price: 300-700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: ahmedabad
+  - action: utter_ask_if_needs_email
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: birju112@gmail.com
+  - slot_was_set:
+    - email: birju112@gmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_location
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: ahmedabad
+  - slot_was_set:
+    - location: ahmedabad
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: ahmedabad
+  - action: utter_ask_if_needs_email
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinnese
+  - slot_was_set:
+    - cuisine: chinnese
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: ahmedabad
+  - slot_was_set:
+    - location: ahmedabad
+  - action: utter_ask_price_range
+  - intent: restaurant_search
+    entities:
+    - price: 300-700
+  - slot_was_set:
+    - price: 300-700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: ahmedabad
+  - action: utter_ask_if_needs_email
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: birju112@gmail.com
+  - slot_was_set:
+    - email: birju112@gmail.com
+  - action: action_send_email
+  - action: utter_goodbye
+  - intent: restaurant_search
+    entities:
+    - location: ahmedabad
+  - slot_was_set:
+    - location: ahmedabad
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: ahmedabad
+  - action: utter_ask_if_needs_email
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chineese
+    - location: ahmedabad
+  - slot_was_set:
+    - cuisine: chineese
+  - slot_was_set:
+    - location: ahmedabad
+  - action: utter_ask_price_range
+  - intent: restaurant_search
+    entities:
+    - price: 300-700
+  - slot_was_set:
+    - price: 300-700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: ahmedabad
+  - action: utter_ask_if_needs_email
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+  - action: utter_do_not_serve
+  - intent: restaurant_search
+    entities:
+    - location: Ranchi
+  - slot_was_set:
+    - location: Ranchi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price_range
+  - intent: restaurant_search
+    entities:
+    - price: 300-700
+  - slot_was_set:
+    - price: 300-700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Ranchi
+  - action: utter_ask_if_needs_email
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Ahmedabad
+  - slot_was_set:
+    - location: Ahmedabad
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price_range
+  - intent: restaurant_search
+    entities:
+    - price: 300-700
+  - slot_was_set:
+    - price: 300-700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Ahmedabad
+  - action: utter_ask_if_needs_email
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+  - action: utter_do_not_serve
+  - intent: restaurant_search
+    entities:
+    - location: Ahmedabad
+  - slot_was_set:
+    - location: Ahmedabad
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: utter_ask_price_range
+  - intent: restaurant_search
+    entities:
+    - price: 0-300
+  - slot_was_set:
+    - price: 0-300
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Ahmedabad
+  - action: utter_ask_if_needs_email
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: restaurant_search
+    entities:
+    - location: Ahmedabad
+  - slot_was_set:
+    - location: Ahmedabad
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Ahmedabad
+  - action: utter_ask_if_needs_email
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinesse
+  - slot_was_set:
+    - cuisine: chinesse
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Nashik
+  - slot_was_set:
+    - location: Nashik
+  - action: utter_ask_price_range
+  - intent: restaurant_search
+    entities:
+    - price: 300-700
+  - slot_was_set:
+    - price: 300-700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Nashik
+  - action: utter_ask_if_needs_email
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinesse
+  - slot_was_set:
+    - cuisine: chinesse
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Dindigul
+  - slot_was_set:
+    - location: Dindigul
+  - action: utter_ask_price_range
+  - intent: restaurant_search
+    entities:
+    - price: 0-300
+  - slot_was_set:
+    - price: 0-300
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Dindigul
+  - action: utter_ask_if_needs_email
+  - intent: goodbye

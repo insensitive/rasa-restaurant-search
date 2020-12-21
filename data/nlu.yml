@@ -1,0 +1,128 @@
+version: "2.0"
+nlu:
+- intent: affirm
+  examples: |
+    - yes
+    - yep
+    - yeah
+    - indeed
+    - that's right
+    - ok
+    - great
+    - right, thank you
+    - correct
+    - great choice
+    - sounds really good
+    - thanks
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - good bye
+    - stop
+    - end
+    - farewell
+    - Bye bye
+    - have a good one
+    - no
+- intent: greet
+  examples: |
+    - hey
+    - howdy
+    - hey there
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - dear sir
+- intent: restaurant_search
+  examples: |
+    - i'm looking for a place to eat
+    - I want to grab lunch
+    - I am searching for a dinner spot
+    - I am looking for some restaurants in [Delhi](location).
+    - I am looking for some restaurants in [Bangalore](location)
+    - show me [chinese](cuisine) restaurants
+    - show me [chines]{"entity": "cuisine", "value": "chinese"} restaurants in the [New Delhi]{"entity": "location", "value": "Delhi"}
+    - show me a [mexican](cuisine) place in the [Thanjavur](location)
+    - i am looking for an [indian](cuisine) spot called olaolaolaolaolaola
+    - search for restaurants
+    - anywhere in the [Visakhapatnam](location)
+    - I am looking for [asian fusion](cuisine) food
+    - I am looking a restaurant in [Ranchi](location)
+    - in [Surat](location)
+    - [South Indian](cuisine)
+    - [North Indian](cuisine)
+    - [Italian](cuisine)
+    - [Chinese]{"entity": "cuisine", "value": "chinese"}
+    - [chinese](cuisine)
+    - [Dehradun](location)
+    - Oh, sorry, in [Bilaspur](location)
+    - in [delhi](location)
+    - I am looking for some restaurants in [Mumbai](location)
+    - I am looking for [mexican indian fusion](cuisine)
+    - [central](location) [indian](cuisine) restaurant
+    - please help me to find restaurants in [pune](location)
+    - Please find me a restaurantin [bangalore](location)
+    - [mumbai](location)
+    - show me restaurants
+    - please find me [chinese](cuisine) restaurant in [delhi](location)
+    - can you find me a [chinese](cuisine) restaurant
+    - [Kolkata](location)
+    - please find me a restaurant in [Bengaluru](location)
+    - please show me a few [italian](cuisine) restaurants in [bangalore](location)
+    - find [chinesse](cuisine) restaurants in [ahmedabad](location)
+    - need to eat [chinese](cuisine) food
+    - find restaurant
+    - [Chennai](location)
+    - I want to eat [chinnese](cuisine) food
+    - restaurants in [ahmedabad](location)
+    - [0-300](price)
+    - [300-700](price)
+    - [700-](price)
+    - [chineese](cuisine) restaurant in [Chandigarh](location)
+    - Please find restaurants in abrakadabra
+    - Please find restaurants in [Roorkee](location)
+    - Find me restaurants in [Hubli-](location)[Dharwad](location)
+    - Please find restaurants
+    - paris
+    - [Ranchi](location)
+    - Looking for restaurants in italy
+    - Looking for restaurants in [Ahmedabad](location)
+    - Can you suggest restaurants?
+    - [Ahmedabad](location)
+    - norway
+    - Find restaurants in [Ahmedabad](location)
+    - Please find [chinesse](cuisine) restaurants in norway
+    - [Nashik](location)
+    - Please find [chinesse](cuisine) restaurants
+    - [Dindigul](location)
+    - Please find restaurants at abdraes
+    - Please find restaurants at alksjdlqkwje
+    - asdqweqw
+    - [Delhi](location)
+    - Please find restaurants in [Delhi](location)
+    - Please find restaurants in [Pune](location)
+    - [Chinese]{"entity": "cuisine", "value": "chinese"}
+    - Please find restaurants in california
+    - [Chandigarh](location)
+    - [South Indian](cuisine)
+    - [700-](price)
+- intent: inform
+  examples: |
+    - [birju112@gmail.com](email)
+- synonym: chinese
+  examples: |
+    - chines
+    - Chinese
+    - Chines
+- synonym: Delhi
+  examples: |
+    - New Delhi
+    - Dilli
+- synonym: bangalore
+  examples: |
+    - Bengaluru
+- regex: greet
+  examples: |
+    - hey[^\s]*
